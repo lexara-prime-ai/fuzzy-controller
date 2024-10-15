@@ -285,8 +285,8 @@ pub fn draw_rules(
     for i in 0..size.0 {
         for j in 0..size.1 {
             let m = measure_text(&format!("{}", labels.2[i * size.1 + j]), None, 24, 1.);
-            let font = Font::default();
-            font.set_filter(FilterMode::Nearest);
+            // let font = macroquad::text::Font::default();
+            // font.set_filter(FilterMode::Nearest);
             let c = (fuzzied.0[i]
                 .min(fuzzied.1[j])
                 .min(fuzzied.2.unwrap_or_else(|| 1.))
@@ -299,7 +299,7 @@ pub fn draw_rules(
                 TextParams {
                     font_size: 24_u16,
                     font_scale: 1.0,
-                    font,
+                    font: None,
                     color: Color::from_rgba(0, c, c, 255),
                     ..Default::default()
                 },
@@ -341,7 +341,7 @@ pub fn draw_rules(
 
 pub fn draw_vingette(tex: Texture2D) {
     draw_texture_ex(
-        tex,
+        &tex,
         0.,
         0.,
         WHITE,

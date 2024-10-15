@@ -10,23 +10,22 @@
         html,
         body,
         canvas {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            height: 100%;
+            margin: 0px;
+            padding: 0px;
             width: 100%;
-            background: #242424;
-            z-index: 0;
+            height: 100%;
             overflow: hidden;
-            outline: 0;
+            position: absolute;
+            background: black;
+            z-index: 0;
         }
     </style>
 </head>
 
 <body>
     <canvas id="glcanvas" tabindex="1"></canvas>
-    <script src="https://not-fl3.github.io/miniquad-samples/gl.js"></script>
-    <script>load("fuzzy.wasm");</script>
+    <script src="index.js"></script>
+    <script>load("./target/wasm32-unknown-unknown/release/fuzzy.wasm");</script>
 </body>
 
 </html>

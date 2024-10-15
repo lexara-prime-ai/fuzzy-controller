@@ -37,7 +37,7 @@ fn window_conf() -> Conf {
 async fn main() {
     let texture = load_texture("smoke.png").await.unwrap();
     let e1 = Emitter::new(EmitterConfig {
-        texture: Some(texture),
+        texture: Some(texture.clone()),
         ..smoke()
     });
     let e2 = Emitter::new(EmitterConfig {
@@ -335,7 +335,7 @@ async fn main() {
             (&fuzzied[&InputType::W], &[1.], None),
         );
 
-        draw_vingette(vingette);
+        draw_vingette(vingette.clone());
         pop_camera_state();
         next_frame().await;
     }
